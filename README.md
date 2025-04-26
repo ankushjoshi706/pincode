@@ -1,21 +1,35 @@
-# React + TypeScript + Vite
+Project Overview (100 Marks)
+Task
+Create a form with an input field where the user can enter a 6-digit Indian Postal Code. When the user submits the form, fetch the corresponding data from the API and display it on the page.
+You need to create a Pincode Lookup app that uses the Indian Postal Pincode API to retrieve the details of a pincode.
+The app should have an input field where the user can enter a pincode. There should also be a "Lookup" button that the user can click to fetch the details of the pincode.
+When the "Lookup" button is clicked, the app should make a GET request to the API to retrieve the details of the pincode. The API endpoint to use is
+https://api.postalpincode.in/pincode/<PINCODE>, where PINCODE is the pincode entered by the user.
+The app should display the following details about the pincode:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Post office name
+Pincode
+District
+State
+The details should be displayed in a UI as shown in the figma -
+https://www.figma.com/file/3cNCfMB8eiGezRAkt7T91s/Contest-3
 
-While this project uses React, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+Requirements
+The app should also allow the user to filter the results by post office name using an input field. The app should update the Ui dynamically as the user types in the filter input field.
 
-## Deploy Your Own
 
-Deploy your own Vite project with Vercel.
+Also handle errors accordingly- ie - if the postal code is not 6 digits then don't fetch the API rather show a message or an alert that the code is not 6 digits. Similarly if there is an error in the response, show that error on the screen. Also if the filtered Array has no object inside it after filtering even then show a message like “Couldn’t find the postal data you’re looking for…”
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vite-react&template=vite-react)
 
-_Live Example: https://vite-react-example.vercel.app_
+While the API is fetching data, please also show a loader of your choice. You can use a library for a loader or make a custom-css-loader. Show the loader till the data is fetching, once fetched don’t show the loader again. The filtering should happen real time and no loader is needed for that.
 
-### Deploying From Your Terminal
 
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
+API endpoint - https://api.postalpincode.in/pincode/${pincode}
 
-```shell
-$ vercel
-```
+Marking Scheme (100 Marks)
+Fetching of API Data on click of button - 25
+UI - 25
+Filter functionality - 15
+Loader - 10
+Use of useState for data handling - 15
+Error Handling - 10
